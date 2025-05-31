@@ -2,9 +2,11 @@
 
 {
   imports = [
-    <home-manager/nixos>
+    ./home-manager.nix
+    ./zsh.nix
     ./git.nix
     ./chrome.nix
     ./vscode.nix
+    ./oh-my-zsh.nix
   ];
 }
