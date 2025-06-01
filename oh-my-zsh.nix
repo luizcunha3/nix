@@ -1,30 +1,33 @@
-# configuration.nix
+{ config, pkgs, ... }:
 
-# for global user
-users.defaultUserShell=pkgs.zsh; 
+{
+  environment.systemPackages = with pkgs; [
+    zsh
+    zsh-powerlevel10k
+  ];
 
-# For a specific user
-users.users.<my-username>.shell = pkgs.zsh; 
-# users.users.officialrajdeepsingh.shell = pkgs.zsh;
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+    zsh-autoenv.enable = true;
 
-# enable zsh and oh my zsh
-programs = {
-   zsh = {
+    ohMyZsh = {
       enable = true;
-      autosuggestions.enable = true;
-      zsh-autoenv.enable = true;
-      syntaxHighlighting.enable = true;
-      ohMyZsh = {
-         enable = true;
-         theme = "robbyrussell";
-         plugins = [
-           "git"
-           "npm"
-           "history"
-           "node"
-           "rust"
-           "deno"
-         ];
-      };
-   };
-};
+      theme = "robbyrussell";  # Manter tema padrão pois vamos carregar powerlevel10k manualmente
+      plugins = [
+        "git"
+        "npm"
+        "history"
+        "node"
+        "rust"
+        "deno"
+      ];
+    };
+
+    shellInit = ''
+      # Carrega o tema powerlevel10k instalado pelo Nix
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+    '';
+  };
+}
