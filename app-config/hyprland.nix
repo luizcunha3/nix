@@ -20,6 +20,7 @@ in {
 
       input = {
         kb_layout = "us";
+        kb_variant = "intl";
         follow_mouse = 1;
         touchpad.natural_scroll = true;
       };
@@ -39,6 +40,10 @@ in {
         "$mod, L, movefocus, r"
         "$mod, K, movefocus, u"
         "$mod, J, movefocus, d"
+        "$mod SHIFT, H, movewindow, l"
+        "$mod SHIFT, L, movewindow, r"
+        "$mod SHIFT, K, movewindow, u"
+        "$mod SHIFT, J, movewindow, d"
         ",Print, exec, grim -g \"$(slurp)\" - | wl-copy"
       ];
 
