@@ -16,7 +16,10 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = [ ",preferred,auto,1" ];
+      monitor = [
+        "DP-2,2560x1440@164.85,0x0,1"
+        "DP-3,2560x1440@59.95,2560x0,1"
+      ];
 
       input = {
         kb_layout = "us";
