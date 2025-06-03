@@ -12,6 +12,11 @@
     ./chrome.nix
     ./vscode.nix
     ./oh-my-zsh.nix
+    ./steam.nix
+    ./qbittorrent.nix
+    ./spotify.nix
+    ./vlc.nix
+    ./obsidian.nix
   ];
 
     services.xserver = {

@@ -4,6 +4,7 @@
   imports = [
     ./app-config/hyprland.nix
     ./app-config/waybar.nix
+    ./app-config/cursor.nix
   ];
   
   home.stateVersion = "25.05";

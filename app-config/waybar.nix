@@ -22,11 +22,6 @@
           format-muted = " Muted";
         };
 
-        battery = {
-          format = "{capacity}% {icon}";
-          format-icons = [ "" "" "" "" "" ];
-        };
-
         network = {
           format-wifi = " {essid}";
           format-ethernet = " {ifname}";
@@ -35,26 +30,28 @@
       };
     };
 
-    style = ''
+   style = ''
       * {
         font-family: "JetBrainsMono Nerd Font", monospace;
         font-size: 13px;
-        color: #ffffff;
+        color: #f5f5dc;
       }
 
       window#waybar {
-        background-color: rgba(0, 0, 0, 0.6);
-        border-bottom: 2px solid #5e81ac;
+        background-color: rgba(0, 0, 0, 0.3);
       }
 
-      #clock,
-      #battery,
-      #network,
-      #pulseaudio,
-      #tray {
+    tooltip {
+      border-radius: 4px;
+      font-size:14px; color: #fbf1c7; background: rgba(40,40,40,1.0);
+    }
+
+      .module {
         padding: 0 10px;
-        margin: 0 4px;
+        margin: 0 5px;
+        background: transparent;
       }
+      #tray * {font-size:14px; color: #fbf1c7; background: rgba(40,40,40,1.0);}
     '';
   };
 }

@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  wallpaper = "${config.home.homeDirectory}/Imagens/wallpaper.png";
+  wallpaper = "${config.home.homeDirectory}/nixos/wallpaper.jpg";
 in {
   home.packages = with pkgs; [
     kitty
@@ -44,6 +44,7 @@ in {
         "$mod SHIFT, L, movewindow, r"
         "$mod SHIFT, K, movewindow, u"
         "$mod SHIFT, J, movewindow, d"
+        "$mod SHIFT, F, fullscreen, 1"
         ",Print, exec, grim -g \"$(slurp)\" - | wl-copy"
       ];
 
