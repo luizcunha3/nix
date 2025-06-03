@@ -31,6 +31,8 @@ in {
       "$mod" = "SUPER";
 
       bind = [
+        "$mod SHIFT, Q, exec, systemctl poweroff"
+        "$mod, C, exec, google-chrome-stable"
         "$mod, RETURN, exec, ghostty"
         "$mod, Q, killactive"
         "$mod, M, exit"
